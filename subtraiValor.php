@@ -1,10 +1,10 @@
 <?php 
 /**
- * Class in order to subtract values
+ * method in order to subtract values
  *
  * @author   Luciano Palhares <lucianopalharesrosa@hotmail.com>
- * @example $valor1 = '10.500,25'
- * @example $valor2 = '10.250,25'
+ * @example $valor1 = '10,500.25'
+ * @example $valor2 = '10,250.25'
  */
 	function subtraiValor($valor1,$valor2){
 		

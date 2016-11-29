@@ -1,14 +1,14 @@
 <?php
 /**
- * Class in order to multiply the value in money * amount
+ * method in order to multiply the value in money * amount
  *
  * @author   Luciano Palhares <lucianopalharesrosa@hotmail.com>
- * @example $valor = '10.250,25'
+ * @example $valor = '10,250.25'
  * @example $quantidade = '10'
  */
 	function multiplicaValor($valor,$quantidade){
 
-		//$valor = '10.250,25';
+		//$valor = '10,250.25';
 		//$quantidade = 10;
 
 		$pega = explode(',',$valor);

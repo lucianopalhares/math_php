@@ -1,10 +1,10 @@
 <?php 
 /**
- * Class in order to sum the two values
+ * method in order to sum the two values
  *
  * @author   Luciano Palhares <lucianopalharesrosa@hotmail.com>
- * @example $valor1 = '10.250,25'
- * @example $valor2 = '10.250,25'
+ * @example $valor1 = '10,250.25'
+ * @example $valor2 = '10,250.25'
  */
 
 	function somaValor($valor1,$valor2){		

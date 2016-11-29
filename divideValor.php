@@ -1,9 +1,9 @@
 <?php 
 /**
- * Class in order to divide values 
+ * method in order to divide values 
  *
  * @author   Luciano Palhares <lucianopalharesrosa@hotmail.com>
- * @example $valor = '10.250,25'
+ * @example $valor = '10,250.25'
  * @example $quantidade = '40'
  */
 	function divideValor($valor,$quantidade){
