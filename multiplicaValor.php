@@ -1,79 +1,24 @@
 <?php
 /**
- * method in order to multiply the value in money * amount
+ * Method in order to multiply the value in money * amount.
  *
- * @author   Luciano Palhares <lucianopalharesrosa@hotmail.com>
+ * @author Luciano Palhares <lucianopalharesrosa@hotmail.com>
  * @example $valor = '10,250.25'
  * @example $quantidade = '10'
  */
-	function multiplicaValor($valor,$quantidade){
+function multiplicaValor($valor, $quantidade) {
+    // Remove separador de milhar e converte para ponto decimal
+    $valor = str_replace(',', '', $valor);
 
-		//$valor = '10,250.25';
-		//$quantidade = 10;
+    // Realiza a multiplicação
+    $multiplicacao = $valor * $quantidade;
 
-		$pega = explode(',',$valor);
+    // Formata o resultado para o padrão 0,000,000,000.00
+    $resultado = number_format($multiplicacao, 2, '.', ',');
 
-		$multi = null;
+    return $resultado;
+}
 
-		foreach ($pega as $value) {
-			$multi .= $value;
-		}
-
-		$valor = $multi;
-
-		$multiplicacao = $valor * $quantidade;
-
-		$separa = explode('.',$multiplicacao);
-
-		$tamanho = strlen($separa[0]);
-
-		$separa2 = $separa[0];
-
-		$string2 = null;
-
-		$conta = 0;
-		for($i = $tamanho - 1; $i >= 0; $i--){
-			$string2 .= $separa2[$i];
-		
-			$conta++;
-			if($i > 0)
-			{
-				if($conta == 3){
-				
-					$string2 .= ',';
-					$conta = 0;
-				}
-			}
-		}
-
-		$i = null;
-
-		$print = null;
-
-		for($i = strlen($string2) - 1; $i >= 0; $i--){
-			$print .= $string2[$i];	
-		}		
-
-		$print .= ".";
-
-		if(isset($separa[1])){
-			$print .= $separa[1];
-			if(strlen($separa[1]) == 1){
-				$print .= '0';
-			}
-		}else{
-			$print .= '00';
-		}
-
-		$mult_explode = explode(".",$print);
-        $resumo = null;
-        $resumo .= $mult_explode[0];
-        $resumo .= ".";
-        $resumo .= $mult_explode[1][0];
-        $resumo .= $mult_explode[1][1];
-
-        return $resumo;
-
-	}
-	//example of return 0,000,000,000.00
+// Exemplo de uso
+echo multiplicaValor('10,250.25', '10'); // Retorna: 102,502.50
 ?>
